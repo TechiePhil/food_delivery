@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/data/data.dart';
+import 'package:food_delivery/widgets/recent_orders.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -58,7 +59,8 @@ class HomeScreenState extends State<HomeScreen> {
               ),
               ),
             ),
-          )
+          ),
+          RecentOrders()
         ]
       )
     );
