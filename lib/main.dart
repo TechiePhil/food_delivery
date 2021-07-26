@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
+import 'screens/home_screen.dart';
 
 void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: HomeScreen(),
-  ));
+  runApp(HomePage());
 }
 
-class HomeScreen extends StatefulWidget {
-  @override
-  HomeScreenState createState() => HomeScreenState();
-}
-
-class HomeScreenState extends State<HomeScreen> {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Food Delivery UI',
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.grey[50],
+        primaryColor: Colors.deepOrangeAccent,
+      ),
+      home: HomeScreen(),
     );
   }
 }
