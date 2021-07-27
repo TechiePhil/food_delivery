@@ -27,16 +27,20 @@ class HomeScreenState extends State<HomeScreen> {
           ),
           child: Row(
             children: <Widget>[
-              ClipRRect(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15), 
-                  bottomLeft: Radius.circular(15)
-                ),
-                child: Image(
-                  height: 150,
-                  width: 120,
-                  image: AssetImage(restaurant.imageUrl),
-                  fit: BoxFit.cover,
+              Hero(
+                transitionOnUserGestures: true,
+                tag: restaurant.imageUrl,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(15), 
+                    bottomLeft: Radius.circular(15)
+                  ),
+                  child: Image(
+                    height: 150,
+                    width: 120,
+                    image: AssetImage(restaurant.imageUrl),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               Container(
