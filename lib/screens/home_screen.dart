@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/data/data.dart';
+import 'package:food_delivery/screens/cart_screen.dart';
 import 'package:food_delivery/screens/restaurant_screen.dart';
 import 'package:food_delivery/widgets/rating_stars.dart';
 import 'package:food_delivery/widgets/recent_orders.dart';
@@ -116,7 +117,16 @@ class HomeScreenState extends State<HomeScreen> {
                 fontSize: 20,
               )
             ),
-            onPressed: () {}
+            onPressed: () async {
+              Future<int> count = await Navigator.push(
+                context,
+                MaterialPageRoute(
+                  fullscreenDialog: true,
+                  builder: (context) => CartScreen(),
+                )
+              );
+              count.then((value) {print(value);});
+            }
           )
         ]
       ),
