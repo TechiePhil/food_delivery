@@ -144,14 +144,13 @@ class HomeScreenState extends State<HomeScreen> {
               ]
             ),
             onPressed: () async {
-              Future<int> count = await Navigator.push(
+              Navigator.push(
                 context,
                 MaterialPageRoute(
                   fullscreenDialog: true,
                   builder: (context) => CartScreen(),
                 )
               );
-              count.then((value) {print(value);});
             }
           )
         ]
