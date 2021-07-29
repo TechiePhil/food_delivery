@@ -109,13 +109,39 @@ class HomeScreenState extends State<HomeScreen> {
         ),
         title: Text('Food Delivery'),
         actions: <Widget>[
-          TextButton(
-            child: Text(
-              'Cart (${currentUser.cart.length})',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-              )
+          SizedBox(width: 5),
+          IconButton(
+            alignment: Alignment.centerLeft,
+            icon: Stack(
+              alignment: Alignment.centerLeft,
+              fit: StackFit.expand,
+              children: <Widget>[
+                Icon(
+                  Icons.shopping_cart_outlined,
+                  color: Colors.white,
+                  size: 35,
+                ),
+                Positioned(
+                  bottom: 18,
+                  right: 1,
+                  child: Container(
+                    width: 18,
+                    height: 18,
+                    alignment: Alignment.center,
+                    child: Text(
+                      '${currentUser.cart.length}',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                      )
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.redAccent,
+                      borderRadius: BorderRadius.circular(20),
+                    )
+                  ),
+                )
+              ]
             ),
             onPressed: () async {
               Future<int> count = await Navigator.push(
